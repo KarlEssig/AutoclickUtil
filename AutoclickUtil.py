@@ -208,7 +208,7 @@ class ThreadedMain(threading.Thread): #the main thread of the program, will hand
                     if idfunc == -1:
                         self.EXIT = 1
                         return   #if esc is pressed, end autoclicker
-                  
+        return                
         
     """
     def runAutoclicker(self):
