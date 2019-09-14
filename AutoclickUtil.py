@@ -258,7 +258,7 @@ class ThreadedMain(threading.Thread): #the main thread of the program, will hand
         i = 0
         inputbuffer.acquire()
         while (i < number):
-            print("Input wait time between mouseclicks {0} and {1}".format((i+1),(i+2%number)))      
+            print("Input wait time between mouseclicks {0} and {1}".format((i),((i+1)%number)))      
             temp = input()
             try: 
                 self.waitprocedure.append(float(temp))
