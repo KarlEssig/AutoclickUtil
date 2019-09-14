@@ -175,10 +175,11 @@ class ThreadedMain(threading.Thread): #the main thread of the program, will hand
     
     def runAutoclicker(self, number=None):
         if number is None:
-            prevposx,prevposy = pyautogui.position()
+            
             while(True):
                 i = 0
                 while (i < len(self.mouseprocedurex)):
+                    prevposx,prevposy = pyautogui.position()
                     pyautogui.moveTo(x=self.mouseprocedurex[i],y=self.mouseprocedurey[i])
                     pyautogui.mouseDown()
                     pyautogui.mouseUp()
@@ -190,13 +191,14 @@ class ThreadedMain(threading.Thread): #the main thread of the program, will hand
                         return  #if esc is pressed, end autoclicker
         else:
             j = 0
-            prevposx,prevposy = pyautogui.position()
+            
             while(j < number):
                 #print("iter {0}".format(j))
                 j = j + 1
                 i = 0
                 while (i < len(self.mouseprocedurex)):
                     #print("in move {0}".format(i))
+                    prevposx,prevposy = pyautogui.position()
                     pyautogui.moveTo(x=self.mouseprocedurex[i],y=self.mouseprocedurey[i])
                     pyautogui.mouseDown()
                     pyautogui.mouseUp()
@@ -206,6 +208,7 @@ class ThreadedMain(threading.Thread): #the main thread of the program, will hand
                     if idfunc == -1:
                         self.EXIT = 1
                         return   #if esc is pressed, end autoclicker
+                  
         
     """
     def runAutoclicker(self):
